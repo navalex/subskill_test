@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Home' ~ parent() }}{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('home') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="btn-group btn-category-select mb-4" data-toggle="tooltip" title="{{ 'post.choose_cat' | trans }}" role="group" aria-label="Basic example">
+                    <button type="button" data-postId="all" class="btn btn-secondary">All</button>
+                    {% for category in categories %}
+                        <button type="button" data-postId="{{ category.id }}" class="btn btn-{{ category.color }}">{{ category.name }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="articles-grid">
+            <div class="grid-sizer col-4"></div>
+        </div>
+        <div class="loader text-center">
+            <div class="spinner-grow text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+{% endblock %}
