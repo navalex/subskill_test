@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\PostArticle;
 use App\Repository\PostArticleRepository;
 use App\Repository\PostCategoryRepository;
+use App\Service\TwitterFeed;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,35 +17,14 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="home")
      * @param PostCategoryRepository $categoryRepository
+     * @param TwitterFeed $facebookFeed
      * @return Response
      */
-    public function index(PostCategoryRepository $categoryRepository)
+    public function index(PostCategoryRepository $categoryRepository, TwitterFeed $facebookFeed)
     {
         return $this->render('home/index.html.twig', [
-            'categories' => $categoryRepository->findAll()
-        ]);
-    }
-
-    /**
-     * @Route("/article/{slug}", name="article")
-     * @param PostArticle $article
-     * @return Response
-     */
-    public function article(PostArticle $article) {
-        $url = $this->generateUrl('article', [
-            'slug' => $article->getSlug()
-        ], UrlGeneratorInterface::ABSOLUTE_URL);
-
-        $twitter_params =
-            '?text=' . urlencode($article->getTitle()) . '+-' .
-            '&amp;url=' . urlencode($url);
-
-
-        $share_link = "http://twitter.com/share" . $twitter_params . "";
-
-        return $this->render('home/article.html.twig', [
-           'article' => $article,
-            'share_link' => $share_link
+            'categories' => $categoryRepository->findAll(),
+            'feed' => $facebookFeed->getFeed("118385049558092")
         ]);
     }
 }

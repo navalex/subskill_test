@@ -9,7 +9,7 @@
                 <div class="card-text">
                     {{ article.description | truncate(60, true, '...') }}
                 </div>
-                <a href="{{ path('article', {'slug': article.slug }) }}" class="btn btn-primary stretched-link">{{ 'post.btn.more' | trans }}</a>
+                <a href="{{ path('post_article_show', {'slug': article.slug }) }}" class="btn btn-primary stretched-link">{{ 'post.btn.more' | trans }}</a>
             </div>
         </div>
     </div>

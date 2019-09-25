@@ -1,0 +1,5 @@
+asserts:
+  article:
+    title_not_blank: You must fill title
+    description_not_blank: You must fill description
+    description_length: Description too short (> 10 char.)

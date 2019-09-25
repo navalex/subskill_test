@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'post.crud.index.title' | trans ~ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">{{ 'post.crud.index.title' | trans }}</div>
+
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>{{ 'post.crud.index.table.id' | trans }}</th>
+                    <th>{{ 'post.crud.index.table.title' | trans }}</th>
+                    <th>{{ 'post.crud.index.table.description' | trans }}</th>
+                    <th>{{ 'post.crud.index.table.publish_date' | trans }}</th>
+                    <th>{{ 'post.crud.index.table.actions' | trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for post_article in post_articles %}
+                    <tr>
+                        <td>{{ post_article.id }}</td>
+                        <td>{{ post_article.title }}</td>
+                        <td>{{ post_article.description }}</td>
+                        <td>{{ post_article.publishDate ? post_article.publishDate|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <div class="btn-group-vertical btn-group-sm">
+                                <a class="btn btn-secondary" href="{{ path('post_article_show', {'slug': post_article.slug}) }}">{{ 'post.crud.index.table.show' | trans }}</a>
+                                <a class="btn btn-info" href="{{ path('post_article_edit', {'id': post_article.id}) }}">{{ 'post.crud.index.table.edit' | trans }}</a>
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">{{ 'post.crud.index.table.no_records' | trans }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="card-footer">
+            </div>
+        </div>
+    </div>
+
+    <div class="container position-fixed m-auto" style="bottom: 0; left: 0; right: 0;">
+        <a href="{{ path('post_article_new') }}" class="btn btn-primary btn-block">{{ 'post.crud.index.add_btn' | trans }}</a>
+    </div>
+{% endblock %}

@@ -25,17 +25,11 @@ Côté Front :
 -> 1 page contact avec un formulaire;
 
 -> Voici les champs :
-- Civilité (Mme / M)
-- radio
-- Nom
-- text
-- Prénom
-- text
-- E-mail
-- text
-- Objet (Recrutement, Support, Marketing)
-- list
-- Message
-- text
+- Civilité (Mme / M) - radio
+- Nom - text
+- Prénom - text
+- E-mail - text
+- Objet (Recrutement, Support, Marketing) - list
+- Message - text
 
 Ce formulaire doit envoyer un e-mail sur l'email de l'administrateur en remontant toutes les infos renseignées par l'utilisateur. Vous devrez utiliser bootstrap ou materialize pour le minimum de mise en page côté Front. Pour cette mission vous pouvez utiliser un framework ou non, c'est à vous de voir. Vous devrez nous envoyer l'exercice terminé pour que nous puissions l'installer sur notre machine locale (MAMP, PHP, MySQL). A vous de nous fournir un readme et/ou documentation si spécialité.

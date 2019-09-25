@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %} - Subskill Blog Test{% endblock %}</title>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -20,11 +20,15 @@
 
                 <div class="collapse navbar-collapse" id="main-navbar">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active"><a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('home') }}">{{ 'navbar.home' | trans }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('contact') }}">{{ 'navbar.contact' | trans }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ path('post_article_index') }}">{{ 'navbar.crud' | trans }}</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
+
+        {% include 'flash.html.twig' %}
 
         {% block body %}{% endblock %}
         {% block javascripts %}

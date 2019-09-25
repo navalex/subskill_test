@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ post_article.title ~ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="jumbotron pb-4 pt-4">
+            <h3><span class="badge badge-{{ post_article.category.color }}">{{ post_article.category.name }}</span> {{ post_article.title }}</h3>
+            <p class="text-muted font-italic mb-0">{{ 'post.publish_at' | trans }} {{ post_article.publishDate | ago }}<button onclick="window.open('{{ share_link }}','{{ "post.twitter_share" | trans }}','width=600,height=300')" class="btn btn-info float-right">{{ 'post.twitter_share' | trans }}</button></p>
+        </div>
+
+        <div>{{ post_article.description }}</div>
+    </div>
+{% endblock %}

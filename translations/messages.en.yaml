@@ -1,0 +1,51 @@
+navbar:
+  home: Home
+  contact: Contact us
+  crud: CRUD
+index:
+  title: Home
+contact:
+  title: Contact Us
+  success: Message sent
+  form:
+    civility: Civility
+    civility_male: Mr.
+    civility_female: M.
+    first_name: First name
+    last_name: Last name
+    from: Email
+    subject: Subject
+    content: Message
+    send: Send
+post:
+  btn:
+    more: See more
+  publish_at: Published at
+  choose_cat: Choose a category
+  twitter_share: Share on Twitter
+  crud:
+    save_btn: Save
+    back_btn: Go back
+    delete_btn: Delete
+    delete_dialog: Are you sure you want to delete this item?
+    form:
+      title: Title
+      description: Description
+      image: Image (link)
+      category: Category
+    index:
+      title: Articles list
+      add_btn: Add an article
+      table:
+        id: ID
+        title: Title
+        description: Description
+        publish_date: Publish date
+        actions: Actions
+        show: Show
+        edit: Edit
+        no_records: No article
+    edit:
+      title: Editing {title}
+    new:
+      title: New article

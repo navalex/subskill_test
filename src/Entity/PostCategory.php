@@ -33,6 +33,11 @@ class PostCategory
      */
     private $articles;
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
     public function __construct()
     {
         $this->articles = new ArrayCollection();

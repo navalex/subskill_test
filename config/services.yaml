@@ -13,6 +13,8 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
+
+
     twig.extension.text:
         class: Twig_Extensions_Extension_Text
         tags:

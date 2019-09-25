@@ -1,11 +1,56 @@
-asserts:
-  article:
-    title_not_blank: Vous devez renseigner un titre
-    description_not_blank: Vous devez renseigner une description
-    description_length: La description n'est pas assez longue (> 10 char.)
-
+navbar:
+  home: Accueil
+  contact: Nous contacter
+  crud: CRUD
+index:
+  title: Accueil
+contact:
+  title: Nous contacter
+  success: Votre message a bien été envoyé
+  form:
+    civility: Civilité
+    civility_male: Mr.
+    civility_female: M.
+    first_name: Prénom
+    last_name: Nom
+    from: Email
+    subject: Sujet
+    content: Message
+    send: Envoyer
 post:
   btn:
     more: Voir plus
   publish_at: Publié
   choose_cat: Choisir une catégorie
+  twitter_share: Partager sur Twitter
+  crud:
+    save_btn: Sauvegarder
+    back_btn: Retour
+    delete_btn: Supprimer
+    delete_dialog: Êtes-vous sûr de vouloir supprimer cet article ?
+    form:
+      title: Titre
+      description: Description
+      image: Image (lien)
+      category: Catégorie
+    index:
+      title: Liste des articles
+      add_btn: Ajouter un article
+      table:
+        id: ID
+        title: Titre
+        description: Description
+        publish_date: Date de publication
+        actions: Actions
+        show: Voir
+        edit: Editer
+        no_records: Pas d'article
+    edit:
+      title: Edition de {title}
+    new:
+      title: Nouvel article
+    view:
+      id: ID
+      title: Titre
+      slug: Slug
+      description: Description

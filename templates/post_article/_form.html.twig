@@ -1,0 +1,7 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <div class="btn-group">
+        <button class="btn btn-primary">{{ 'post.crud.save_btn' | trans }}</button>
+        <a class="btn btn-secondary" href="{{ path('post_article_index') }}">{{ 'post.crud.back_btn' | trans }}</a>
+    </div>
+{{ form_end(form) }}

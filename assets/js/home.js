@@ -11,13 +11,16 @@ imagesLoaded.makeJQueryPlugin( $ );
 
 
 function add_articles(offset) {
-	var $grid = $('.articles-grid');
-	var url = '/post-api/articles/' + offset;
+	let $grid = $('.articles-grid');
+	let url = $grid.data('ajaxurl') + '/' + offset;
 
 	if (category !== undefined) {
 		console.log('cat', category);
 		url += '/' + category;
 	}
+
+	$('.loader').removeClass('d-none');
+
 	setTimeout(function () {
 		$.get(url, (html) => {
 			$grid.append(html).imagesLoaded(() => {
@@ -59,11 +62,8 @@ $(document).ready(() => {
 		if (cat_id === 'all')
 			category = undefined;
 		else {
-			console.log('new cat', cat_id);
 			category = cat_id;
 		}
-
-		$('.loader').removeClass('d-none');
 
 		$('.articles-grid .grid-item').remove();
 		$('.articles-grid').css('height', 0);

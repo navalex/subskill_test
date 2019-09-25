@@ -1,0 +1,5 @@
+asserts:
+  article:
+    title_not_blank: Vous devez renseigner un titre
+    description_not_blank: Vous devez renseigner une description
+    description_length: La description n'est pas assez longue (> 10 char.)
