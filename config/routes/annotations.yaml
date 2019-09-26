@@ -4,3 +4,11 @@ controllers:
     prefix: /{_locale}/
     requirements:
         locale: 'en|fr'
+    defaults: { _locale: 'fr'}
+
+homepage:
+    path: /
+    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController::urlRedirectAction
+    defaults:
+        path: /fr
+        permanent: true
