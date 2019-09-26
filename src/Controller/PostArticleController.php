@@ -18,6 +18,8 @@ class PostArticleController extends AbstractController
 {
     /**
      * @Route("/crud-list", name="post_article_index", methods={"GET"})
+     * @param PostArticleRepository $postArticleRepository
+     * @return Response
      */
     public function index(PostArticleRepository $postArticleRepository): Response
     {
@@ -28,6 +30,8 @@ class PostArticleController extends AbstractController
 
     /**
      * @Route("/new", name="post_article_new", methods={"GET","POST"})
+     * @param Request $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -51,6 +55,8 @@ class PostArticleController extends AbstractController
 
     /**
      * @Route("/{slug}", name="post_article_show", methods={"GET"})
+     * @param PostArticle $postArticle
+     * @return Response
      */
     public function show(PostArticle $postArticle): Response
     {
@@ -71,6 +77,9 @@ class PostArticleController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="post_article_edit", methods={"GET","POST"})
+     * @param Request $request
+     * @param PostArticle $postArticle
+     * @return Response
      */
     public function edit(Request $request, PostArticle $postArticle): Response
     {
@@ -91,6 +100,9 @@ class PostArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="post_article_delete", methods={"DELETE"})
+     * @param Request $request
+     * @param PostArticle $postArticle
+     * @return Response
      */
     public function delete(Request $request, PostArticle $postArticle): Response
     {

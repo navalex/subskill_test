@@ -2,15 +2,11 @@
 
 namespace App\Controller;
 
-use App\Entity\PostArticle;
-use App\Repository\PostArticleRepository;
 use App\Repository\PostCategoryRepository;
 use App\Service\TwitterFeed;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 class HomeController extends AbstractController
 {

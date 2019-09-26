@@ -1,24 +1,45 @@
 # Installation
+
+### Dépendances
 Pour commencer le projet, vous dezvez télécharger les dépendances avec Composer et NPM (ou yarn)
 ```
 $ composer install
 $ npm install
 ```
+
+### Base de données
 Une fois l'installation terminé, ouvrez le fichier `.env` et modifier les identifiants et le nom de la base de données pour correspondre avec votre configuration locale
 ```
 DATABASE_URL=mysql://db_user:db_password@127.0.0.1:3306/db_name
-# db_user: utilisateur de la base de données
-# db_password: mot de passe de l'utilisateur
-# db_name: nom de la base de donnée a créer/utiliser
+```
+> __db_user__: utilisateur de la base de données
+>
+> __db_password__: mot de passe de l'utilisateur
+>
+> __db_name__: nom de la base de donnée a créer/utiliser
+
+#### Base de données vide
+Si vous souhaitez utiliser une base de données vierge, executez les commandes suivante
+```bash
+$ php bin/console doctrine:database:create
+$ php bin/console doctrine:schema:create
 ```
 
+#### Base de données pré-rempli
 Pour utiliser des données de tests (5 catégorie + 100 articles), importez le fichier `datatest.sql` dans votre base de données.
 
+### Génération des assets
 Et pour terminer, vous devez générer les assets en utilisant Webpack:
 ```bash
 $ encore prod
 ```
 (ou `$ encore dev` si vous êtes en environnement de développement)
+
+### Serveur PHP de développement
+Pour tester le site, vous pouvez lancer un serveur php avec la commande suivante:
+```bash
+$ php bin/console server:run
+```
 
 # Consigne du projet
 

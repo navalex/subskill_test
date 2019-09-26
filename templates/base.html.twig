@@ -24,6 +24,19 @@
                         <li class="nav-item"><a class="nav-link" href="{{ path('contact') }}">{{ 'navbar.contact' | trans }}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ path('post_article_index') }}">{{ 'navbar.crud' | trans }}</a></li>
                     </ul>
+                    <ul class="navbar-nav ml-auto">
+                        {% set route = app.request.attributes.get('_route') %}
+                        {% set route_params = app.request.attributes.get('_route_params') %}
+                        {% set params = route_params|merge(app.request.query.all) %}
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropLocal" role="button" data-toggle="dropdown">{{ 'navbar.drop_locale.title' | trans }}</a>
+                            <div class="dropdown-menu" aria-labelledby="dropLocal">
+                                <a class="dropdown-item" href="{{ path(route, params|merge({ _locale: 'fr' })) }}">{{ 'navbar.drop_locale.fr' | trans }}</a>
+                                <a class="dropdown-item" href="{{ path(route, params|merge({ _locale: 'en' })) }}">{{ 'navbar.drop_locale.en' | trans }}</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>

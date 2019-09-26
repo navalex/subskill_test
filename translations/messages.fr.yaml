@@ -2,6 +2,10 @@ navbar:
   home: Accueil
   contact: Nous contacter
   crud: CRUD
+  drop_locale:
+    title: Langage
+    fr: Français
+    en: Anglais
 index:
   title: Accueil
 contact:
